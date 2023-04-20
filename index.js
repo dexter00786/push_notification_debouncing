@@ -15,7 +15,7 @@ AppRegistry.registerComponent(appName, () => RootNavigation);
 // When the application is in a background or quit state, the onMessage handler will not be called when receiving messages. Instead, you need to setup a background callback handler via the setBackgroundMessageHandler method.
 
 // Register background handler
-messaging().setBackgroundMessageHandler(async remoteMessage => {
-    console.log('Message handled in the background!', remoteMessage);
-});
+// messaging().setBackgroundMessageHandler(async remoteMessage => {
+//     console.log('Message handled in the background!', remoteMessage);
+// });
 

@@ -1,28 +1,31 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect } from 'react'
-import { notificationListner, requestUserPermission } from './src/PushNotification_helper'
-import CustomButton from './src/components/CustomButton'
-import { useNavigation } from '@react-navigation/native'
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  notificationListner,
+  requestUserPermission,
+} from './src/utils/PushNotification_helper';
+import CustomButton from './src/components/CustomButton';
+import {useNavigation} from '@react-navigation/native';
+import Signup from './src/screens/Signup/Signup';
+import RootNavigation from './src/navigation/RootNavigation';
 const App = () => {
   const navigation = useNavigation();
-  useEffect(()=>{
-    requestUserPermission();
-    notificationListner()
-  },[])
+  // useEffect(()=>{
+  //   requestUserPermission();
+  //   notificationListner()
+  // },[])
 
   return (
-    <SafeAreaView style = {styles.container} >
-      <View style = {[styles.container, {justifyContent : 'center', alignItems : "center"}]} >
-          <CustomButton backgroundColor = {'#0F73EE'} label = {"Debouncing"} onPress = {()=> navigation.navigate('Debouncing')} />
-      </View>
+    <SafeAreaView style={styles.container}>
+      <RootNavigation />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
 const styles = StyleSheet.create({
-  container : {
-    flex  : 1,
-  }
-})
+  container: {
+    flex: 1,
+  },
+});
